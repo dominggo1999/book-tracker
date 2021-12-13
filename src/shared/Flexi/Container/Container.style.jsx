@@ -7,6 +7,6 @@ export const ContainerStyle = styled.div`
     relative
   `}
 
-  padding : 20px;
+  padding : 15px;
   border: ${({ debug }) => debug && '1px solid green'};
 `;
