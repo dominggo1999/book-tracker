@@ -8,7 +8,8 @@ export const HeaderWrapper = styled.nav`
     justify-between 
     items-center
     text-primary 
-    h-full
+    h-full 
+    relative
   `}
 `;
 
@@ -62,7 +63,7 @@ export const Circle = styled.div`
     justify-center
  
     bg-primary 
-    text-blue  
+    text-white  
     translate-y-[-50%] 
     top-[50%]
     dark:(left-[20px])
@@ -78,10 +79,69 @@ export const ThemeButton = styled.button`
     border-2 
     border-primary  
     relative  
-    outline-none
+    outline-none 
   `} 
 
   ${Circle} {
     transition : ${({ clicked }) => clicked && 'left ease-in-out 150ms'} ;
+  }
+`;
+
+export const Avatar = styled.button`
+  ${tw`
+    w-[32px] 
+    h-[32px]
+    rounded-full 
+    overflow-hidden 
+  `}
+
+  img{
+    ${tw` 
+      pointer-events-none
+      w-full 
+      h-full
+      object-cover 
+      object-center
+    `}
+  }
+`;
+
+export const DropownMenu = styled.div`
+  ${tw` 
+    select-none
+    absolute 
+    top-full 
+    right-0 
+    w-[150px]
+    mt-5 
+    bg-blue 
+    text-primary 
+    py-4
+    text-right 
+    rounded-lg 
+  `} 
+
+  ${ThemeButton}{
+    ${tw`
+      mt-2 
+      mx-4
+    `}
+  }
+`;
+
+export const DropdownItem = styled.div`
+  ${tw`
+    py-1 
+    px-4
+    hover:(bg-primary text-white)
+  `}
+
+  button, a {
+    ${tw`
+        font-bold
+      w-full 
+      justify-end
+      inline-flex
+    `}
   }
 `;
