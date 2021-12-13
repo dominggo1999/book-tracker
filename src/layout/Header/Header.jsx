@@ -1,39 +1,43 @@
 import React, { useContext, useState, useRef } from 'react';
 import { MdOutlineDarkMode } from 'react-icons/md';
 import { BsLightningCharge } from 'react-icons/bs';
+import { BiMenuAltRight } from 'react-icons/bi';
+import { GrFormClose } from 'react-icons/gr';
 import { Container } from '../../shared/Flexi';
 import {
   HeaderWrapper,
   Brand,
   Navigation,
   NavItem,
-  ThemeButton,
-  Circle,
   Avatar,
+  MenuIcon,
+  Wrapper,
 } from './Header.style';
 import Link, { NavLink } from '../../atom/Link';
 import { ThemeContext } from '../../context/ThemeProvider';
-import { Medium } from '../../hooks/useSizes';
+import useSizes, { Medium } from '../../hooks/useSizes';
 import UserMenu from './UserMenu';
 import useClickOutside from '../../hooks/useClickOutside';
+import { SideNavbarContext } from '../../context/SideNavbarProvider';
+import ThemeButton from './ThemeButton';
+import { Authenticated, NotAuthenticated } from './AuthStatus';
 
-const Authenticated = ({ children, isLogin }) => {
-  return isLogin ? children : null;
-};
+const BelowMedium = ({ children }) => {
+  const { isMedium } = useSizes();
 
-const NotAuthenticated = ({ children, isLogin }) => {
-  return !isLogin ? children : null;
+  return !isMedium ? children : null;
 };
 
 const Header = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  // Side navbar
+  const { show, toggle } = useContext(SideNavbarContext) || {};
+
+  const { theme, setTheme } = useContext(ThemeContext) || {};
   const [clicked, setClicked] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const menuRef = useRef();
   const avatarRef = useRef();
-
-  const Icon = theme === 'dark' ? BsLightningCharge : MdOutlineDarkMode;
 
   const changeTheme = () => {
     setTheme((prevTheme) => {
@@ -54,7 +58,7 @@ const Header = () => {
   useClickOutside(menuRef, closeUserMenu);
 
   return (
-    <HeaderWrapper>
+    <Wrapper>
       <Container>
         <HeaderWrapper>
           {/* Click handler just for testing purpose */}
@@ -63,6 +67,14 @@ const Header = () => {
               Book Tracker
             </Link>
           </Brand>
+
+          <BelowMedium>
+            <MenuIcon onClick={toggle}>
+              {
+                show ? <GrFormClose /> : <BiMenuAltRight />
+              }
+            </MenuIcon>
+          </BelowMedium>
 
           <Medium>
             <Navigation>
@@ -82,14 +94,7 @@ const Header = () => {
                     Sign Up
                   </NavLink>
                 </NavItem>
-                <ThemeButton
-                  clicked={clicked}
-                  onClick={changeTheme}
-                >
-                  <Circle>
-                    <Icon />
-                  </Circle>
-                </ThemeButton>
+                <ThemeButton />
               </NotAuthenticated>
 
               <Authenticated isLogin={isLogin}>
@@ -120,9 +125,7 @@ const Header = () => {
                 </Avatar>
 
                 <UserMenu
-                  clicked={clicked}
                   changeTheme={changeTheme}
-                  icon={Icon}
                   ref={menuRef}
                   showUserMenu={showUserMenu}
                   closeUserMenu={closeUserMenu}
@@ -132,7 +135,7 @@ const Header = () => {
           </Medium>
         </HeaderWrapper>
       </Container>
-    </HeaderWrapper>
+    </Wrapper>
   );
 };
 

@@ -1,4 +1,5 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, useEffect } from 'react';
+import { breakpoints } from '../constants/breakpoints';
 
 const initialState = {
   show: false,
@@ -34,6 +35,20 @@ const SideNavbarProvider = ({ children }) => {
   const open = () => dispatch({ type: 'OPEN' });
   const close = () => dispatch({ type: 'CLOSE' });
   const toggle = () => dispatch({ type: 'TOGGLE' });
+
+  useEffect(() => {
+    const closeSidebarOnLargeScreen = () => {
+      if(window.innerWidth >= breakpoints.md) {
+        close();
+      }
+    };
+
+    window.addEventListener('resize', closeSidebarOnLargeScreen);
+
+    return () => {
+      window.removeEventListener('resize', closeSidebarOnLargeScreen);
+    };
+  }, []);
 
   return (
     <SideNavbarContext.Provider

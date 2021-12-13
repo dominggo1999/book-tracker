@@ -1,6 +1,14 @@
 import tw, { styled } from 'twin.macro';
 import { colors } from '../../constants/colors';
 
+export const Wrapper = styled.div`
+  ${tw`
+    w-full 
+    bg-blue 
+    relative  
+  `}
+`;
+
 export const HeaderWrapper = styled.nav`
   ${tw`
     bg-blue 
@@ -9,7 +17,6 @@ export const HeaderWrapper = styled.nav`
     items-center
     text-primary 
     h-full 
-    relative
   `}
 `;
 
@@ -113,7 +120,7 @@ export const DropownMenu = styled.div`
     top-full 
     right-0 
     w-[150px]
-    mt-5 
+    mt-1 
     bg-blue 
     text-primary 
     py-4
@@ -144,4 +151,15 @@ export const DropdownItem = styled.div`
       inline-flex
     `}
   }
+`;
+
+export const MenuIcon = styled.button`
+  ${tw`
+    text-4xl 
+    z-[9999]
+    bg-blue 
+    rounded-full 
+    w-[40px] 
+    h-[40px]
+  `}
 `;

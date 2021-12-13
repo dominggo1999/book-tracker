@@ -7,7 +7,6 @@ const CustomStyles = createGlobalStyle`
     ${tw`
       antialiased 
       font-content  
-      h-screen
     `}
   }
 `;

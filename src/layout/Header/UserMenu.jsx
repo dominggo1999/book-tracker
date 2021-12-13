@@ -2,15 +2,12 @@ import React, { forwardRef } from 'react';
 import Link from '../../atom/Link';
 import {
   DropownMenu,
-  ThemeButton,
   Circle,
   DropdownItem,
 } from './Header.style';
+import ThemeButton from './ThemeButton';
 
 const UserMenu = forwardRef(({
-  clicked,
-  changeTheme,
-  icon: Icon,
   closeUserMenu,
   showUserMenu,
 }, ref) => {
@@ -26,14 +23,7 @@ const UserMenu = forwardRef(({
       <DropdownItem onClick={closeUserMenu}>
         <button>Sign Out</button>
       </DropdownItem>
-      <ThemeButton
-        clicked={clicked}
-        onClick={changeTheme}
-      >
-        <Circle>
-          <Icon />
-        </Circle>
-      </ThemeButton>
+      <ThemeButton />
     </DropownMenu>
   );
 });
