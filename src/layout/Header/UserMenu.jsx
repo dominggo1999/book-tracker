@@ -11,15 +11,16 @@ const UserMenu = forwardRef(({
   clicked,
   changeTheme,
   icon: Icon,
+  closeUserMenu,
 }, ref) => {
   return (
     <DropownMenu ref={ref}>
-      <DropdownItem>
+      <DropdownItem onClick={closeUserMenu}>
         <Link to="/profile">
           Profile
         </Link>
       </DropdownItem>
-      <DropdownItem>
+      <DropdownItem onClick={closeUserMenu}>
         <button>Sign Out</button>
       </DropdownItem>
       <ThemeButton

@@ -100,6 +100,7 @@ const Header = () => {
                       changeTheme={changeTheme}
                       icon={Icon}
                       ref={menuRef}
+                      closeUserMenu={closeUserMenu}
                     />
                   )
                 }
