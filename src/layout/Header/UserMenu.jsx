@@ -12,7 +12,10 @@ const UserMenu = forwardRef(({
   changeTheme,
   icon: Icon,
   closeUserMenu,
+  showUserMenu,
 }, ref) => {
+  if(!showUserMenu) return null;
+
   return (
     <DropownMenu ref={ref}>
       <DropdownItem onClick={closeUserMenu}>

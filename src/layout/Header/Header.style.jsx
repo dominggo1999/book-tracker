@@ -138,7 +138,7 @@ export const DropdownItem = styled.div`
 
   button, a {
     ${tw`
-        font-bold
+      font-bold
       w-full 
       justify-end
       inline-flex
