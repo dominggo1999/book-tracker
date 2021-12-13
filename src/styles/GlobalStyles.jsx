@@ -6,7 +6,7 @@ const CustomStyles = createGlobalStyle`
   body {
     ${tw`
       antialiased 
-      font-content
+      font-content 
     `}
   }
 `;

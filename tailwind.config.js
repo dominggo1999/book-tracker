@@ -10,6 +10,7 @@ const colors = {
 
 module.exports = {
   mode: 'jit',
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
