@@ -11,10 +11,10 @@ const Shelf = () => {
       <Container>
         <div tw="flex flex-wrap gap-y-10 justify-between">
 
-          <div tw="w-full md:w-[70%]">
+          <div tw="w-full md:w-[50%] lg:w-[60%] xl:w-[70%]">
             <JournalGroups />
           </div>
-          <div tw="w-full md:w-[25%]">
+          <div tw="w-full md:w-[40%] lg:w-[30%] xl:w-[25%]">
             <SideStats />
           </div>
 
