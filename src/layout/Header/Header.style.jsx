@@ -68,8 +68,7 @@ export const Circle = styled.div`
     flex 
     items-center 
     justify-center
- 
-    bg-primary 
+
     text-white  
     translate-y-[-50%] 
     top-[50%]
@@ -89,8 +88,12 @@ export const ThemeButton = styled.button`
     outline-none 
   `} 
 
+  ${({ dark }) => dark && tw`border-blue`}
+
   ${Circle} {
     transition : ${({ clicked }) => clicked && 'left ease-in-out 150ms'} ;
+
+    ${({ dark }) => (dark ? tw`bg-blue text-primary` : tw`bg-primary`)}
   }
 `;
 

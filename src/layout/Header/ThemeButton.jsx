@@ -4,7 +4,7 @@ import { BsLightningCharge } from 'react-icons/bs';
 import { ThemeContext } from '../../context/ThemeProvider';
 import { ThemeButton as Button, Circle } from './Header.style';
 
-const ThemeButton = () => {
+const ThemeButton = ({ dark }) => {
   const { theme, setTheme } = useContext(ThemeContext) || {};
   const [clicked, setClicked] = useState(false);
 
@@ -19,6 +19,7 @@ const ThemeButton = () => {
 
   return (
     <Button
+      dark={dark}
       clicked={clicked}
       onClick={changeTheme}
     >

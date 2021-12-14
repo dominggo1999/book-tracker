@@ -6,16 +6,21 @@ import { Authenticated, NotAuthenticated } from '../Header/AuthStatus';
 import { Container } from '../../shared/Flexi';
 import useSizes from '../../hooks/useSizes';
 import ThemeButton from '../Header/ThemeButton';
+import { ThemeContext } from '../../context/ThemeProvider';
 
 const SideNavbar = () => {
   const { show } = useContext(SideNavbarContext);
+  const { theme } = useContext(ThemeContext);
   const { isMedium } = useSizes();
   const [isLogin, setIsLogin] = useState(true);
 
   if(isMedium) return null;
 
   return (
-    <StyledNavbarWrapper show={show}>
+    <StyledNavbarWrapper
+      theme={theme}
+      show={show}
+    >
       <Container>
         <NotAuthenticated isLogin={isLogin}>
           <SideNavItem>
@@ -58,7 +63,7 @@ const SideNavbar = () => {
           </SideNavItem>
         </Authenticated>
 
-        <ThemeButton />
+        <ThemeButton dark={theme === 'dark'} />
       </Container>
     </StyledNavbarWrapper>
   );
