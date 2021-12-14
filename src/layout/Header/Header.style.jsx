@@ -5,7 +5,8 @@ export const Wrapper = styled.div`
   ${tw`
     w-full 
     bg-blue 
-    relative  
+    relative   
+    z-[9999]
   `}
 `;
 
@@ -23,7 +24,7 @@ export const HeaderWrapper = styled.nav`
 export const Brand = styled.div`
   ${tw`
     text-2xl  
-    font-content 
+    font-header 
     font-bold 
   `}
 `;
@@ -143,7 +144,7 @@ export const DropdownItem = styled.div`
   ${tw`
     py-1 
     px-4
-    hover:(bg-primary text-white)
+    hover:text-white
   `}
 
   button, a {

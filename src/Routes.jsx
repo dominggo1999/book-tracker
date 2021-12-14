@@ -36,7 +36,7 @@ const Routes = () => {
         <Route exact path="/find-book" component={FindBook} />
         <Route exact path="/book-details/:bookID" component={BookDetails} />
 
-        <Route exact path={['/:groupID(to-read|currently-reading|finished|do-not-finished)']} component={JournalItems} />
+        <Route exact path={['/:groupID(to-read|currently-reading|finished|did-not-finish)']} component={JournalItems} />
 
         <Route exact path="/journal-details/:journalID" component={JournalDetails} />
         <Route exact path="/journal-notes/:journalID" component={JournalNotes} />

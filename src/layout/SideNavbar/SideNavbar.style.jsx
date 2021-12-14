@@ -32,7 +32,8 @@ export const StyledNavbarWrapper = styled.div`
     translate-x-full
     py-20
     bg-blue 
-    dark:bg-primary
+    dark:bg-primary 
+    z-[5000]
   `}
 
   ${({ show }) => show && tw`translate-x-0`}
