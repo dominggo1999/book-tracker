@@ -1,8 +1,12 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { books } from './FakeBookData';
-import { GroupContentWrapper, BookCard } from './JournalGroups.style';
-import { breakpoints } from '../../constants/breakpoints';
+import {
+  GroupContentWrapper,
+  BookCard,
+  CardTitle,
+  Author,
+} from './JournalGroups.style';
 
 import 'swiper/swiper.min.css';
 
@@ -48,6 +52,8 @@ const GroupContent = ({ journals = books }) => {
                     src={i.cover}
                     alt={i.title}
                   />
+                  <CardTitle>{i.title}</CardTitle>
+                  <Author>{i.author}</Author>
                 </BookCard>
               </SwiperSlide>
             );

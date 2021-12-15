@@ -18,13 +18,13 @@ export const GroupHeader = styled.div`
   ${tw`
     flex 
     justify-between 
-    items-center
+    items-center 
+    mb-5
   `}
 `;
 
 export const Title = styled.div`
   ${tw`
-    font-header 
     text-2xl 
     font-bold 
     text-primary   
@@ -50,12 +50,33 @@ export const GroupContentWrapper = styled.div`
 
 export const BookCard = styled.div`
   ${tw`
-    w-full 
+    w-full  
+    select-none
   `}
 
   img{
     ${tw`
       w-full
+      h-[240px] 
+      object-cover 
+      object-center 
+      mb-2
     `}
   }
+`;
+
+export const CardTitle = styled.h2`
+  ${tw`
+    font-bold 
+    text-primary 
+    dark:text-blue 
+  `}
+`;
+
+export const Author = styled.p`
+  ${tw`
+    text-sm 
+    dark:text-white  
+    text-gray
+  `}
 `;

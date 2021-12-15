@@ -37,7 +37,6 @@ export const Sub = styled.div`
 export const SubHeader = styled.p`
   ${tw`
     text-2xl 
-    font-content 
     text-primary  
     dark:text-blue
     font-bold  
@@ -107,7 +106,6 @@ export const BlockIcon = styled.div`
 
 export const Quote = styled.p`
   ${tw`
-    font-content
     text-primary 
     dark:text-white
     mt-2
@@ -118,7 +116,6 @@ export const Quote = styled.p`
 
 export const Author = styled.p`
   ${tw`
-    font-header 
     text-right 
     dark:text-blue 
     text-primary

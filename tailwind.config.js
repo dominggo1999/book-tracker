@@ -6,6 +6,7 @@ const colors = {
   redHover: '#f7b7bd',
   white: '#FEFEFE',
   yellow: '#E7C050',
+  gray: '#2A3960',
 };
 
 module.exports = {

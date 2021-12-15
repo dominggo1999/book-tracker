@@ -9,6 +9,12 @@ const CustomStyles = createGlobalStyle`
       font-content  
     `}
   }
+
+  *{
+    ${tw`
+      font-content  
+    `}
+  }
 `;
 
 const GlobalStyles = () => (

@@ -24,7 +24,6 @@ export const HeaderWrapper = styled.nav`
 export const Brand = styled.div`
   ${tw`
     text-2xl  
-    font-header 
     font-bold 
   `}
 `;
