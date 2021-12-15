@@ -78,6 +78,41 @@ export const Author = styled.p`
   ${tw`
     text-sm 
     dark:text-white  
-    text-gray
+    text-gray 
   `}
+`;
+
+export const PercentageBar = styled.div`
+  ${tw` 
+    mt-2
+    relative 
+    w-full 
+    h-[3px] 
+    rounded-full
+  `}
+
+  background :${({ dark }) => (dark ? '#d0d1d534' : '#d0d1d5e2')} ;
+`;
+
+export const ProgressIndicator = styled.div`
+  ${tw`
+    absolute 
+    top-0 
+    left-0  
+    bg-blue 
+    h-full
+    z-[50]
+  `}
+
+  width : ${({ width }) => width}%;
+`;
+
+export const ProgressNumber = styled.p`
+  ${tw` 
+    relative
+    mt-2
+    text-lg
+    text-primary 
+    dark:text-blue
+  `} 
 `;

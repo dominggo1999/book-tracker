@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { books } from './FakeBookData';
 import {
@@ -6,7 +6,11 @@ import {
   BookCard,
   CardTitle,
   Author,
+  PercentageBar,
+  ProgressIndicator,
+  ProgressNumber,
 } from './JournalGroups.style';
+import { ThemeContext } from '../../context/ThemeProvider';
 
 import 'swiper/swiper.min.css';
 
@@ -40,7 +44,14 @@ const truncateString = (str, num) => {
   return str;
 };
 
+const randomPercentage = () => {
+  return Math.round(Math.ceil(Math.random() * 100));
+};
+
 const GroupContent = ({ journals = books }) => {
+  const { theme } = useContext(ThemeContext);
+  const dark = theme === 'dark';
+
   return (
     <GroupContentWrapper>
       <Swiper
@@ -54,6 +65,7 @@ const GroupContent = ({ journals = books }) => {
           journals && journals.map((i) => {
             const truncatedTitle = truncateString(i.title, 34);
             const truncatedAuthor = truncateString(i.author, 50);
+            const progress = randomPercentage();
 
             return (
               <SwiperSlide key={i.title + Math.random()}>
@@ -64,6 +76,12 @@ const GroupContent = ({ journals = books }) => {
                   />
                   <CardTitle>{truncatedTitle}</CardTitle>
                   <Author>{truncatedAuthor}</Author>
+                  <PercentageBar dark={dark}>
+                    <ProgressIndicator width={progress} />
+                  </PercentageBar>
+                  <ProgressNumber>
+                    {progress}%
+                  </ProgressNumber>
                 </BookCard>
               </SwiperSlide>
             );
