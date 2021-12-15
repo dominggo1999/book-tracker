@@ -33,6 +33,13 @@ const responsiveBreakpoints = {
   },
 };
 
+const truncateString = (str, num) => {
+  if (str.length > num) {
+    return `${str.slice(0, num)}...`;
+  }
+  return str;
+};
+
 const GroupContent = ({ journals = books }) => {
   return (
     <GroupContentWrapper>
@@ -45,6 +52,9 @@ const GroupContent = ({ journals = books }) => {
 
         {
           journals && journals.map((i) => {
+            const truncatedTitle = truncateString(i.title, 34);
+            const truncatedAuthor = truncateString(i.author, 50);
+
             return (
               <SwiperSlide key={i.title + Math.random()}>
                 <BookCard>
@@ -52,8 +62,8 @@ const GroupContent = ({ journals = books }) => {
                     src={i.cover}
                     alt={i.title}
                   />
-                  <CardTitle>{i.title}</CardTitle>
-                  <Author>{i.author}</Author>
+                  <CardTitle>{truncatedTitle}</CardTitle>
+                  <Author>{truncatedAuthor}</Author>
                 </BookCard>
               </SwiperSlide>
             );

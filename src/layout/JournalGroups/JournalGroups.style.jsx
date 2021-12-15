@@ -60,7 +60,8 @@ export const BookCard = styled.div`
       h-[240px] 
       object-cover 
       object-center 
-      mb-2
+      mb-2 
+      rounded-lg
     `}
   }
 `;
