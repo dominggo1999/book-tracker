@@ -51,12 +51,13 @@ export const GroupContentWrapper = styled.div`
 export const BookCard = styled.div`
   ${tw`
     w-full  
-    select-none
+    select-none 
   `}
 
   img{
     ${tw`
-      w-full
+      w-full 
+      min-h-[240px]
       h-[240px] 
       object-cover 
       object-center 

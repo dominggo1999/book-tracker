@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { books } from './FakeBookData';
 import {
   GroupContentWrapper,
@@ -13,6 +14,7 @@ import {
 import { ThemeContext } from '../../context/ThemeProvider';
 
 import 'swiper/swiper.min.css';
+import 'react-lazy-load-image-component/src/effects/opacity.css';
 
 const responsiveBreakpoints = {
   500: {
@@ -70,9 +72,11 @@ const GroupContent = ({ journals = books }) => {
             return (
               <SwiperSlide key={i.title + Math.random()}>
                 <BookCard>
-                  <img
+                  <LazyLoadImage
                     src={i.cover}
                     alt={i.title}
+                    height={240}
+                    effect="opacity"
                   />
                   <CardTitle>{truncatedTitle}</CardTitle>
                   <Author>{truncatedAuthor}</Author>
