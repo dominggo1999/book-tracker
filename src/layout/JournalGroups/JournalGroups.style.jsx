@@ -39,3 +39,23 @@ export const SeeMoreButton = styled.button`
     text-lg
   `}
 `;
+
+// Carousel/Swiper
+
+export const GroupContentWrapper = styled.div`
+  ${tw`
+    mt-2
+  `}
+`;
+
+export const BookCard = styled.div`
+  ${tw`
+    w-full 
+  `}
+
+  img{
+    ${tw`
+      w-full
+    `}
+  }
+`;

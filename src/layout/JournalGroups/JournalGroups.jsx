@@ -7,6 +7,7 @@ import {
   SeeMoreButton,
 } from './JournalGroups.style';
 import { NavLink } from '../../atom/Link';
+import GroupContent from './GroupContent';
 
 const JournalGroups = () => {
   return (
@@ -22,6 +23,7 @@ const JournalGroups = () => {
             </SeeMoreButton>
           </NavLink>
         </GroupHeader>
+        <GroupContent />
       </GroupItem>
       <GroupItem>
         <GroupHeader>
@@ -34,6 +36,7 @@ const JournalGroups = () => {
             </SeeMoreButton>
           </NavLink>
         </GroupHeader>
+        <GroupContent />
       </GroupItem>
       <GroupItem>
         <GroupHeader>
@@ -46,6 +49,8 @@ const JournalGroups = () => {
             </SeeMoreButton>
           </NavLink>
         </GroupHeader>
+        <GroupContent />
+
       </GroupItem>
       <GroupItem>
         <GroupHeader>
@@ -58,6 +63,8 @@ const JournalGroups = () => {
             </SeeMoreButton>
           </NavLink>
         </GroupHeader>
+        <GroupContent />
+
       </GroupItem>
 
     </Groups>

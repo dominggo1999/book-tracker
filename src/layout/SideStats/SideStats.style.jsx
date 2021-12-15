@@ -111,7 +111,8 @@ export const Quote = styled.p`
     text-primary 
     dark:text-white
     mt-2
-    mb-4 
+    mb-4  
+    flex
   `}
 `;
 
