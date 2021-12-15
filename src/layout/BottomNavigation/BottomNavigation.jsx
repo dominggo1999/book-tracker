@@ -10,11 +10,12 @@ import {
 } from './BottomNavigation.style';
 import { NavLink } from '../../atom/Link';
 import { Container } from '../../shared/Flexi';
+import 'twin.macro';
 
 const BottomNavigation = () => {
   return (
     <BottomNavigationWrapper>
-      <Container>
+      <Container tw="px-[15px] py-[8px]">
         <Navigation>
           <NavItem>
             <NavLink
