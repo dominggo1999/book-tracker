@@ -52,7 +52,13 @@ export const BookCard = styled.div`
   ${tw`
     w-full  
     select-none 
-  `}
+  `} 
+  
+  span{
+    ${tw`
+      w-full 
+    `}
+  }
 
   img{
     ${tw`
