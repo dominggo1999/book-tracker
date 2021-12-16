@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import tw, { styled } from 'twin.macro';
 
 export const Overlay = styled.div`
@@ -7,12 +7,15 @@ export const Overlay = styled.div`
     w-full
     h-screen
     left-0
-    top-0
+    top-0 
+    flex 
+    items-center 
+    justify-center 
   `}
   
-  ${({ transparent }) => (transparent ? tw`bg-transparent` : tw`bg-black  opacity-50`)}
+  ${({ transparent }) => (transparent ? tw`bg-transparent` : tw`bg-[#0000007a]`)}
 
-  z-index: 888;
+  z-index: 10001;
 `;
 
 const Backdrop = ({
@@ -20,10 +23,19 @@ const Backdrop = ({
 }) => {
   if(!open)return null;
 
+  const ref = useRef();
+
+  const closeBackdrop = (e) => {
+    if(e.target === ref.current) {
+      handleClose();
+    }
+  };
+
   return (
     <Overlay
-      transparent
-      onClick={handleClose}
+      ref={ref}
+      transparent={transparent}
+      onClick={closeBackdrop}
     >
       {children}
     </Overlay>

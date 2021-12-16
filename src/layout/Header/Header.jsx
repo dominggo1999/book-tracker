@@ -1,6 +1,4 @@
 import React, { useContext, useState, useRef } from 'react';
-import { MdOutlineDarkMode } from 'react-icons/md';
-import { BsLightningCharge } from 'react-icons/bs';
 import { BiMenuAltRight } from 'react-icons/bi';
 import { GrFormClose } from 'react-icons/gr';
 import { Container } from '../../shared/Flexi';
@@ -9,7 +7,6 @@ import {
   Brand,
   Navigation,
   NavItem,
-  Avatar,
   MenuIcon,
   Wrapper,
 } from './Header.style';
@@ -21,6 +18,7 @@ import useClickOutside from '../../hooks/useClickOutside';
 import { SideNavbarContext } from '../../context/SideNavbarProvider';
 import ThemeButton from './ThemeButton';
 import { Authenticated, NotAuthenticated } from './AuthStatus';
+import Avatar from '../../atom/Avatar/Avatar';
 
 const BelowMedium = ({ children }) => {
   const { isMedium } = useSizes();
@@ -117,12 +115,7 @@ const Header = () => {
                 <Avatar
                   ref={avatarRef}
                   onClick={toggleUserMenu}
-                >
-                  <img
-                    src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Forig00.deviantart.net%2F2b67%2Ff%2F2009%2F273%2F1%2F5%2Fsenjougahara_by_archiemouse.jpg&f=1&nofb=1"
-                    alt="Senjougahara"
-                  />
-                </Avatar>
+                />
 
                 <UserMenu
                   changeTheme={changeTheme}

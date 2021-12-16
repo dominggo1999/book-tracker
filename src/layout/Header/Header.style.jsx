@@ -97,25 +97,6 @@ export const ThemeButton = styled.button`
   }
 `;
 
-export const Avatar = styled.button`
-  ${tw`
-    w-[32px] 
-    h-[32px]
-    rounded-full 
-    overflow-hidden 
-  `}
-
-  img{
-    ${tw` 
-      pointer-events-none
-      w-full 
-      h-full
-      object-cover 
-      object-center
-    `}
-  }
-`;
-
 export const DropownMenu = styled.div`
   ${tw` 
     select-none

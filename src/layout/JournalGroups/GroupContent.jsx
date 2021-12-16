@@ -3,13 +3,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { books } from './FakeBookData';
 import {
   GroupContentWrapper,
-  BookCard,
+} from './JournalGroups.style';
+import {
+  Card,
   CardTitle,
   Author,
   PercentageBar,
   ProgressIndicator,
   ProgressNumber,
-} from './JournalGroups.style';
+} from '../../atom/JournalCard';
+
 import { ThemeContext } from '../../context/ThemeProvider';
 import useSizes from '../../hooks/useSizes';
 
@@ -108,7 +111,7 @@ const GroupContent = ({ journals = books }) => {
 
             return (
               <SwiperSlide key={i.title + Math.random()}>
-                <BookCard>
+                <Card>
                   <img
                     src={i.cover}
                     alt={i.title}
@@ -122,7 +125,7 @@ const GroupContent = ({ journals = books }) => {
                   <ProgressNumber>
                     {progress}%
                   </ProgressNumber>
-                </BookCard>
+                </Card>
               </SwiperSlide>
             );
           })

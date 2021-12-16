@@ -1,10 +1,11 @@
 import React from 'react';
+import Account from '../layout/Account/Account';
 
 const Profile = () => {
   return (
-    <div>
-      my profile
-    </div>
+    <>
+      <Account />
+    </>
   );
 };
 
