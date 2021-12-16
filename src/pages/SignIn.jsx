@@ -1,10 +1,11 @@
 import React from 'react';
+import SignInForm from '../layout/SignInForm/SignInForm';
 
 const SignIn = () => {
   return (
-    <div>
-      sign in
-    </div>
+    <>
+      <SignInForm />
+    </>
   );
 };
 
