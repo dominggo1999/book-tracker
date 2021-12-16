@@ -16,7 +16,7 @@ import ChangePasswordForm from './ChangePasswordForm';
 
 const Account = () => {
   const [showNameForm, setShowNameForm] = useState(false);
-  const [showChangePasswordForm, setShowChangePasswordForm] = useState(true);
+  const [showChangePasswordForm, setShowChangePasswordForm] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const toggleNameForm = () => setShowNameForm(!showNameForm);
