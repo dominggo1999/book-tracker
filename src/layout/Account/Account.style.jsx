@@ -82,7 +82,7 @@ export const NameForm = styled.div`
       px-4  
       py-1
       text-primary
-      dark:text-blue 
+      dark:text-white 
       outline-none 
       text-lg  
       sm:max-w-max 
@@ -161,7 +161,7 @@ export const ChangePasswordWrapper = styled.div`
       px-4  
       py-1
       text-primary
-      dark:text-blue 
+      dark:text-white 
       outline-none 
       text-lg  
       max-w-[250px] 

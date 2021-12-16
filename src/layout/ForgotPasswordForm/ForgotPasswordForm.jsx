@@ -1,6 +1,4 @@
 import React from 'react';
-import { FaGoogle as Google } from 'react-icons/fa';
-import { SiDiscord as Discord } from 'react-icons/si';
 import {
   Formik, Form, Field, ErrorMessage,
 } from 'formik';
@@ -8,54 +6,34 @@ import * as Yup from 'yup';
 import { Container } from '../../shared/Flexi';
 import {
   FormType,
-  AuthProviders,
   RegistrationFormWrapper,
-  Divider,
   FormFields,
   LabelAndError,
   ErrorMsgWrapper,
   FormButton,
   FormMessage,
 } from '../../atom/RegistrationForm';
-import AuthProviderButton from '../../atom/AuthProviderButton';
 import Link from '../../atom/Link';
 
 const initialValues = {
   email: '',
-  password: '',
 };
 
 const validationSchema = Yup.object({
   email: Yup.string()
     .email('Invalid email format')
     .required('Required'),
-  password: Yup.string()
-    .min(8, 'must be longer than 8')
-    .required('Required'),
 });
 
-const SignInForm = () => {
+const ForgotPasswordForm = () => {
   const handleSubmit = (e) => {
-    console.log('Signing you in');
+    console.log('Sending reset password instruction');
   };
 
   return (
     <Container>
-      <FormType>Sign In</FormType>
+      <FormType>Forgot Password</FormType>
       <RegistrationFormWrapper>
-        <AuthProviders>
-          <AuthProviderButton
-            icon={Google}
-            provider="Google"
-          />
-          <AuthProviderButton
-            icon={Discord}
-            provider="Discord"
-          />
-          <Divider>
-            or use your email for registration
-          </Divider>
-        </AuthProviders>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -80,32 +58,12 @@ const SignInForm = () => {
                 name="email"
               />
 
-              <LabelAndError>
-                <label htmlFor="password">Password</label>
-                <ErrorMsgWrapper>
-                  <ErrorMessage
-                    name="password"
-                  />
-                </ErrorMsgWrapper>
-              </LabelAndError>
-              <Field
-                type="password"
-                required
-                name="password"
-              />
-              <FormButton type="submit">Sign in</FormButton>
+              <FormButton type="submit">Send reset password instructions</FormButton>
             </Form>
-
             <FormMessage>
-              Don&apos;t have an account yet?
-              {' '}
-              <Link to="/sign-up">
-                Sign up
-              </Link>
-            </FormMessage>
-            <FormMessage>
-              <Link to="/forgot-password">
-                Forgot password?
+              Back to {' '}
+              <Link to="/sign-in">
+                Sign in
               </Link>
             </FormMessage>
           </FormFields>
@@ -117,4 +75,4 @@ const SignInForm = () => {
   );
 };
 
-export default SignInForm;
+export default ForgotPasswordForm;

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Btn } from './AuthProviderButton.style';
+import { FormButton } from './RegistrationForm';
 
 const AuthProviderButton = ({ provider, icon: Icon, ...rest }) => {
   return (
-    <Btn {...rest}>
+    <FormButton {...rest}>
       <Icon />
       Continue with {provider}
-    </Btn>
+    </FormButton>
   );
 };
 

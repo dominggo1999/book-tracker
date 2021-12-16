@@ -16,6 +16,7 @@ const JournalNotes = lazy(() => import('./pages/JournalNotes'));
 const JournalProgress = lazy(() => import('./pages/JournalProgress'));
 const SignIn = lazy(() => import('./pages/SignIn'));
 const SignUp = lazy(() => import('./pages/SignUp'));
+const ForgotPassword = lazy(() => import('./pages/ForgotPassword'));
 const Stats = lazy(() => import('./pages/Stats'));
 const Profile = lazy(() => import('./pages/Profile'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -48,6 +49,7 @@ const Routes = () => {
 
         <Route exact path="/sign-in" component={SignIn} />
         <Route exact path="/sign-up" component={SignUp} />
+        <Route exact path="/forgot-password" component={ForgotPassword} />
 
         {/* 404 PAGE */}
         <Route path="*" component={NotFound} />
