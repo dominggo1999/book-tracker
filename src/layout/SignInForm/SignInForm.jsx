@@ -52,10 +52,10 @@ const SignInForm = () => {
             icon={Discord}
             provider="Discord"
           />
-          <Divider>
-            or use your email for registration
-          </Divider>
         </AuthProviders>
+        <Divider>
+          or use your email for registration
+        </Divider>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}

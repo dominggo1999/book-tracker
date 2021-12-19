@@ -1,24 +1,37 @@
 import tw, { styled } from 'twin.macro';
+import { gap } from '../../util/polyfillGap';
 
 export const SideStatsSection = styled.section`
   ${tw`
     flex 
     flex-col 
-    gap-5
+  `}
+
+  ${gap(5, 5)} 
+
+
+`;
+
+export const Border = styled.div`
+  ${tw`
+    border-2
+    border-blue 
+    rounded-3xl
   `}
 `;
 
 export const Block = styled.div`
   ${tw`
-    border-2 
-    border-blue 
     rounded-3xl 
     p-5 
     flex 
     flex-col 
-    gap-y-10  
     relative
   `}
+
+  
+
+  ${gap(0, 10)}
 
   a{
     ${tw`
@@ -51,14 +64,29 @@ export const StatsItem = styled.p`
   `}
 `;
 
+export const StatsNumber = styled.span`
+  ${tw`
+    font-semibold  
+    dark:text-blue
+    text-xl
+  `}
+`;
+
 export const StatsRating = styled.div`
   ${tw`
     flex 
     items-center 
-    gap-1
     text-primary 
     dark:text-white
   `} 
+
+  ${gap(1, 1)}
+
+  ${StatsNumber} {
+    ${tw`
+      mr-1
+    `}
+  }
 
   svg{
     ${tw`
@@ -66,14 +94,6 @@ export const StatsRating = styled.div`
       text-2xl
     `}
   }
-`;
-
-export const StatsNumber = styled.span`
-  ${tw`
-    font-semibold  
-    dark:text-blue
-    text-xl
-  `}
 `;
 
 export const DetailsButton = styled.button`

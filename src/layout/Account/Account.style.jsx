@@ -1,4 +1,5 @@
 import tw, { styled } from 'twin.macro';
+import { gap } from '../../util/polyfillGap';
 
 export const AccountDetails = styled.div`
   ${tw`
@@ -47,9 +48,10 @@ export const Actions = styled.div`
   ${tw`
     flex 
     mx-auto 
-    justify-center 
-    gap-4
+    justify-center
   `}
+
+  ${gap(4, 1)}
 `;
 
 export const ActionButton = styled.button`
@@ -103,9 +105,9 @@ export const FormLine = styled.div`
   ${tw`
     flex   
     justify-center
-    gap-2  
-    gap-y-5
   `}
+
+  ${gap(2, 5)}
 
   button {
     ${tw`

@@ -1,4 +1,5 @@
 import tw, { styled } from 'twin.macro';
+import { gap } from '../util/polyfillGap';
 
 export const FormType = styled.h1`
   ${tw`
@@ -26,16 +27,17 @@ export const RegistrationFormWrapper = styled.div`
 export const AuthProviders = styled.div`
   ${tw`
     flex 
-    flex-col
-    gap-y-3
+    flex-col 
   `}
+
+  ${gap(0, 3)}
 `;
 
 export const Divider = styled.span`
   ${tw` 
     text-primary
     dark:text-white 
-    py-2
+    py-4
   `}
 `;
 
@@ -104,7 +106,6 @@ export const FormButton = styled.button`
     hover:bg-blueHover 
     py-2  
     font-bold 
-    mt-2 
     text-primary
   `} 
 
