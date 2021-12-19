@@ -16,7 +16,8 @@ export const StyledAvatar = styled.button`
   svg{
     ${tw`
       w-full 
-      h-full
+      h-full 
+      pointer-events-none
     `}
   }
 `;

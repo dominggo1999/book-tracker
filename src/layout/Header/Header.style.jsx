@@ -63,7 +63,7 @@ export const Circle = styled.div`
     absolute 
     w-[25px]
     h-[25px] 
-    rounded-full 
+    rounded-full  
     
     flex 
     items-center 
@@ -74,6 +74,8 @@ export const Circle = styled.div`
     top-[50%]
     dark:(left-[20px])
     left-[1px] 
+
+    pointer-events-none
   `} 
 `;
 
