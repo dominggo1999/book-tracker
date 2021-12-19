@@ -1,13 +1,11 @@
 import tw, { styled } from 'twin.macro';
-import { gap } from '../../util/polyfillGap';
 
 export const Groups = styled.div`
   ${tw` 
     flex 
     flex-col 
+    gap-y-10
   `}
-
-  ${gap(0, 10)}
 `;
 
 export const GroupItem = styled.div`

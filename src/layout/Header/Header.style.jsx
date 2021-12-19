@@ -1,6 +1,5 @@
 import tw, { styled } from 'twin.macro';
 import { colors } from '../../constants/colors';
-import { gap } from '../../util/polyfillGap';
 
 export const Wrapper = styled.div`
   ${tw`
@@ -26,18 +25,16 @@ export const Brand = styled.div`
   ${tw`
     text-2xl  
     font-bold 
-  `}
+  `} 
 `;
 
 export const Navigation = styled.ul`
   ${tw`
     flex  
     items-center
-    h-[2rem]
+    h-[2rem] 
+    gap-10
   `}
-
-
-  ${gap(10, 10)}
 `;
 
 export const NavItem = styled.li`

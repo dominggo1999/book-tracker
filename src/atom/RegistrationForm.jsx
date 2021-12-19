@@ -1,5 +1,4 @@
 import tw, { styled } from 'twin.macro';
-import { gap } from '../util/polyfillGap';
 
 export const FormType = styled.h1`
   ${tw`
@@ -28,9 +27,9 @@ export const AuthProviders = styled.div`
   ${tw`
     flex 
     flex-col 
+    gap-y-3
   `}
 
-  ${gap(0, 3)}
 `;
 
 export const Divider = styled.span`

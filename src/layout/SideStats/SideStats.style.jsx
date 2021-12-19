@@ -1,15 +1,11 @@
 import tw, { styled } from 'twin.macro';
-import { gap } from '../../util/polyfillGap';
 
 export const SideStatsSection = styled.section`
   ${tw`
     flex 
     flex-col 
+    gap-5
   `}
-
-  ${gap(5, 5)} 
-
-
 `;
 
 export const Border = styled.div`
@@ -26,12 +22,9 @@ export const Block = styled.div`
     p-5 
     flex 
     flex-col 
-    relative
+    relative 
+    gap-y-10
   `}
-
-  
-
-  ${gap(0, 10)}
 
   a{
     ${tw`
@@ -77,10 +70,9 @@ export const StatsRating = styled.div`
     flex 
     items-center 
     text-primary 
-    dark:text-white
+    dark:text-white 
+    gap-1
   `} 
-
-  ${gap(1, 1)}
 
   ${StatsNumber} {
     ${tw`

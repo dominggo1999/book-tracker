@@ -1,21 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { books } from './FakeBookData';
-import {
-  GroupContentWrapper,
-} from './JournalGroups.style';
-import {
-  Card,
-  CardTitle,
-  Author,
-  PercentageBar,
-  ProgressIndicator,
-  ProgressNumber,
-} from '../../atom/JournalCard';
-
-import { ThemeContext } from '../../context/ThemeProvider';
+import { GroupContentWrapper } from './JournalGroups.style';
+import JournalCard from '../../atom/JournalCard/JournalCard';
 import useSizes from '../../hooks/useSizes';
-
 import 'swiper/swiper.min.css';
 
 const responsiveBreakpoints = {
@@ -51,20 +39,7 @@ const responsiveBreakpoints = {
   },
 };
 
-const truncateString = (str, num) => {
-  if (str.length > num) {
-    return `${str.slice(0, num)}...`;
-  }
-  return str;
-};
-
-const randomPercentage = () => {
-  return Math.round(Math.ceil(Math.random() * 100));
-};
-
 const GroupContent = ({ journals = books }) => {
-  const { theme } = useContext(ThemeContext);
-  const dark = theme === 'dark';
   const {
     isSmall, isMedium, isLarge, isXLarge, isXXLarge,
   } = useSizes();
@@ -105,27 +80,9 @@ const GroupContent = ({ journals = books }) => {
 
         {
           journals && journals.slice(0, 10).map((i) => {
-            const truncatedTitle = truncateString(i.title, 34);
-            const truncatedAuthor = truncateString(i.author, 50);
-            const progress = randomPercentage();
-
             return (
               <SwiperSlide key={i.title + Math.random()}>
-                <Card>
-                  <img
-                    src={i.cover}
-                    alt={i.title}
-                    height={240}
-                  />
-                  <CardTitle>{truncatedTitle}</CardTitle>
-                  <Author>{truncatedAuthor}</Author>
-                  <PercentageBar dark={dark}>
-                    <ProgressIndicator width={progress} />
-                  </PercentageBar>
-                  <ProgressNumber>
-                    {progress}%
-                  </ProgressNumber>
-                </Card>
+                <JournalCard details={i} />
               </SwiperSlide>
             );
           })
