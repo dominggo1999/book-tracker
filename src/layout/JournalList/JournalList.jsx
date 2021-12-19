@@ -19,7 +19,11 @@ const books = [
   ...fakeBooks,
 ];
 
-const JournalList = () => {
+const formatTitle = (title) => {
+  return title.split('-').join(' ');
+};
+
+const JournalList = ({ groupID }) => {
   return (
     <Wrapper>
       <Container>
@@ -27,20 +31,21 @@ const JournalList = () => {
         <div tw="flex flex-wrap justify-between">
           <div tw="w-full md:w-[50%] lg:w-[60%] xl:w-[70%]">
             <JournalListHeader>
-              <GroupTitle>Currently Reading</GroupTitle>
+              <GroupTitle>{formatTitle(groupID)}</GroupTitle>
               <ItemsCount>100 results</ItemsCount>
             </JournalListHeader>
+
+            {/* Filter Here */}
+
             <List>
-              {/* {
-                books.map((i) => {
+              {
+                books && books.slice(0, 10).map((i) => {
                   // Div needed for creating cardsPerRow breakpoints
                   return (
-                    <div key={Math.random()}>
-                      <JournalCard details={i} />
-                    </div>
+                    <JournalCard details={i} />
                   );
                 })
-              } */}
+              }
             </List>
           </div>
           <div tw="w-full mt-10 md:mt-0 md:w-[40%] lg:w-[30%] xl:w-[25%]">

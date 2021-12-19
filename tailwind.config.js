@@ -21,6 +21,9 @@ module.exports = {
         header: ['Playfair Display', 'serif'],
         content: ['Josefin Sans', 'sans-serif'],
       },
+      screens: {
+        500: '500px',
+      },
     },
   },
   plugins: [],

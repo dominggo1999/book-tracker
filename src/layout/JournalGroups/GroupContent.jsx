@@ -32,7 +32,7 @@ const responsiveBreakpoints = {
     slidesPerView: 5,
     spaceBetween: 20,
   },
-  // xl
+  // 2xl
   1536: {
     slidesPerView: 6,
     spaceBetween: 20,

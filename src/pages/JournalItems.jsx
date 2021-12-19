@@ -11,7 +11,7 @@ const JournalItems = () => {
 
   return (
     <>
-      <JournalList />
+      <JournalList groupID={groupID} />
     </>
   );
 };
