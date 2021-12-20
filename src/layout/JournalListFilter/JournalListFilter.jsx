@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 import {
   Formik, Form, Field, ErrorMessage,
 } from 'formik';
 import * as Yup from 'yup';
+import queryString from 'query-string';
 import {
   JournalListFilterWrapper,
 } from './JournalListFilter.style';
@@ -45,14 +46,42 @@ const sortFilter = [
 
 const defaultValue = 'newest';
 
-const JournalListFilter = () => {
+const JournalListFilter = ({ setUrl }) => {
+  const [query, setQuery] = useState({
+    title: 'harry potter',
+    sort: '',
+  });
+
+  // Sort Filter
   const handleSelectChange = (e) => {
-    console.log(e.value);
+    setQuery({
+      ...query,
+      sort: e.value,
+    });
   };
 
-  const handleSubmit = () => {
-
+  // Search Filter
+  const handleSubmit = (e) => {
+    setQuery({
+      ...query,
+      title: e.searchQuery,
+    });
   };
+
+  const baseURL = 'https://www.googleapis.com/books/v1/volumes?';
+
+  const createURL = () => {
+    const fetchParams = queryString.stringify({
+      q: [query.title],
+    });
+
+    return baseURL + fetchParams;
+  };
+
+  // This useEffect just for testing react infinite scroll
+  useEffect(() => {
+    setUrl(createURL());
+  }, [query]);
 
   return (
     <JournalListFilterWrapper>
