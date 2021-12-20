@@ -11,6 +11,7 @@ import SideStats from '../SideStats/SideStats';
 import { books as fakeBooks } from '../JournalGroups/FakeBookData';
 import JournalCard from '../../atom/JournalCard/JournalCard';
 import 'twin.macro';
+import JournalListFilter from '../JournalListFilter/JournalListFilter';
 
 const books = [
   ...fakeBooks,
@@ -26,6 +27,7 @@ const formatTitle = (title) => {
 const JournalList = ({ groupID }) => {
   return (
     <Wrapper>
+
       <Container>
 
         <div tw="flex flex-wrap justify-between">
@@ -36,6 +38,7 @@ const JournalList = ({ groupID }) => {
             </JournalListHeader>
 
             {/* Filter Here */}
+            <JournalListFilter />
 
             <List>
               {

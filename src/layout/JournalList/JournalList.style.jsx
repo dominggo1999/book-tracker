@@ -3,6 +3,7 @@ import tw, { styled } from 'twin.macro';
 export const Wrapper = styled.div`
   ${tw`
     flex 
+    flex-col
     w-full 
     dark:bg-primary 
     min-h-screen
